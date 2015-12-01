@@ -1,0 +1,8 @@
+The tour sign is an electronic display that can either show a countdown to the next tour, or the time at which the next tour will start.
+
+For either mode, the sign needs to keep track of the current time, and know the start and end times for the tours, as well as the interval between tours.
+
+On start-up, the sign will consult it's real-time clock. If this reports the date as before 20151123, the sign will attempt to update it's date and time from an NTP server. (jarvis has ntpd running, could also use random server from uk.pool.ntp.org)
+
+If the time is considered valid, the sign will attempt to retrieve the start and end times of tours; this shall be from one of the personal sites hosted on JARVIS for internal use - external use may have to be modified to allow this to occur. (http://jarvis.nottinghack.org.uk/~freekyboyal/tour_times.json works externally, doesn't internally though, have to use just http://jarvis/~freekyboyal/tour_times.json instead)
+
